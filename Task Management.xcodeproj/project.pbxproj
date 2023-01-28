@@ -11,6 +11,12 @@
 		EA5DE45A2983D36400790799 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DE4592983D36400790799 /* ContentView.swift */; };
 		EA5DE45C2983D36600790799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE45B2983D36600790799 /* Assets.xcassets */; };
 		EA5DE45F2983D36600790799 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE45E2983D36600790799 /* Preview Assets.xcassets */; };
+		EA5DE46C2983D5F400790799 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE4682983D5F400790799 /* Ubuntu-Medium.ttf */; };
+		EA5DE46D2983D5F400790799 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE4692983D5F400790799 /* Ubuntu-Light.ttf */; };
+		EA5DE46E2983D5F400790799 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE46A2983D5F400790799 /* Ubuntu-Regular.ttf */; };
+		EA5DE46F2983D5F400790799 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE46B2983D5F400790799 /* Ubuntu-Bold.ttf */; };
+		EA5DE4722983D6DC00790799 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DE4712983D6DC00790799 /* Home.swift */; };
+		EA5DE4742985509000790799 /* Ubunut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DE4732985509000790799 /* Ubunut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		EA5DE4592983D36400790799 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA5DE45B2983D36600790799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA5DE45E2983D36600790799 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA5DE4682983D5F400790799 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		EA5DE4692983D5F400790799 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		EA5DE46A2983D5F400790799 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		EA5DE46B2983D5F400790799 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		EA5DE4702983D65000790799 /* Task-Management-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Task-Management-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EA5DE4712983D6DC00790799 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EA5DE4732985509000790799 /* Ubunut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ubunut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,10 @@
 		EA5DE4562983D36400790799 /* Task Management */ = {
 			isa = PBXGroup;
 			children = (
+				EA5DE4702983D65000790799 /* Task-Management-Info.plist */,
+				EA5DE4672983D57400790799 /* Model */,
+				EA5DE4662983D4BF00790799 /* View */,
+				EA5DE4652983D4AC00790799 /* Fonts */,
 				EA5DE4572983D36400790799 /* Task_ManagementApp.swift */,
 				EA5DE4592983D36400790799 /* ContentView.swift */,
 				EA5DE45B2983D36600790799 /* Assets.xcassets */,
@@ -65,6 +82,33 @@
 				EA5DE45E2983D36600790799 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA5DE4652983D4AC00790799 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DE46B2983D5F400790799 /* Ubuntu-Bold.ttf */,
+				EA5DE4692983D5F400790799 /* Ubuntu-Light.ttf */,
+				EA5DE4682983D5F400790799 /* Ubuntu-Medium.ttf */,
+				EA5DE46A2983D5F400790799 /* Ubuntu-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EA5DE4662983D4BF00790799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DE4712983D6DC00790799 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA5DE4672983D57400790799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DE4732985509000790799 /* Ubunut.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5DE46C2983D5F400790799 /* Ubuntu-Medium.ttf in Resources */,
+				EA5DE46D2983D5F400790799 /* Ubuntu-Light.ttf in Resources */,
+				EA5DE46E2983D5F400790799 /* Ubuntu-Regular.ttf in Resources */,
+				EA5DE46F2983D5F400790799 /* Ubuntu-Bold.ttf in Resources */,
 				EA5DE45F2983D36600790799 /* Preview Assets.xcassets in Resources */,
 				EA5DE45C2983D36600790799 /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5DE45A2983D36400790799 /* ContentView.swift in Sources */,
+				EA5DE4722983D6DC00790799 /* Home.swift in Sources */,
+				EA5DE4742985509000790799 /* Ubunut.swift in Sources */,
 				EA5DE4582983D36400790799 /* Task_ManagementApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,11 +319,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Task Management/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Task-Management-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,11 +349,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Task Management/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Task-Management-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
