@@ -20,6 +20,10 @@
 		EA5DE46F2983D5F400790799 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5DE46B2983D5F400790799 /* Ubuntu-Bold.ttf */; };
 		EA5DE4722983D6DC00790799 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DE4712983D6DC00790799 /* Home.swift */; };
 		EA5DE4742985509000790799 /* Ubunut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DE4732985509000790799 /* Ubunut.swift */; };
+		EA76EEE029890DB3004B3CEA /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76EEDF29890DB3004B3CEA /* Extension+Date.swift */; };
+		EA76EEE229890DD2004B3CEA /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76EEE129890DD2004B3CEA /* Extension+View.swift */; };
+		EA76EEE429890DE4004B3CEA /* Extension+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76EEE329890DE4004B3CEA /* Extension+Calendar.swift */; };
+		EA76EEE729890E80004B3CEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76EEE629890E80004B3CEA /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		EA5DE4702983D65000790799 /* Task-Management-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Task-Management-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EA5DE4712983D6DC00790799 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EA5DE4732985509000790799 /* Ubunut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ubunut.swift; sourceTree = "<group>"; };
+		EA76EEDF29890DB3004B3CEA /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		EA76EEE129890DD2004B3CEA /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		EA76EEE329890DE4004B3CEA /* Extension+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Calendar.swift"; sourceTree = "<group>"; };
+		EA76EEE629890E80004B3CEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				EA5DE4702983D65000790799 /* Task-Management-Info.plist */,
+				EA76EEDE29890D91004B3CEA /* Extensions */,
 				EA5DE4672983D57400790799 /* Model */,
+				EA76EEE529890E71004B3CEA /* ViewModel */,
 				EA5DE4662983D4BF00790799 /* View */,
 				EA5DE4652983D4AC00790799 /* Fonts */,
 				EA5DE4572983D36400790799 /* Task_ManagementApp.swift */,
@@ -118,6 +128,24 @@
 				EA1E19F42987E41A00D3C6F4 /* TaskCategory.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EA76EEDE29890D91004B3CEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA76EEDF29890DB3004B3CEA /* Extension+Date.swift */,
+				EA76EEE129890DD2004B3CEA /* Extension+View.swift */,
+				EA76EEE329890DE4004B3CEA /* Extension+Calendar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA76EEE529890E71004B3CEA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA76EEE629890E80004B3CEA /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,10 +223,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1E19F52987E41A00D3C6F4 /* TaskCategory.swift in Sources */,
+				EA76EEE729890E80004B3CEA /* HomeViewModel.swift in Sources */,
+				EA76EEE229890DD2004B3CEA /* Extension+View.swift in Sources */,
 				EA1E19F72987ECA900D3C6F4 /* AddTaskView.swift in Sources */,
 				EA5DE45A2983D36400790799 /* ContentView.swift in Sources */,
 				EA5DE4722983D6DC00790799 /* Home.swift in Sources */,
+				EA76EEE429890DE4004B3CEA /* Extension+Calendar.swift in Sources */,
 				EA1E19F32987E36400D3C6F4 /* Task.swift in Sources */,
+				EA76EEE029890DB3004B3CEA /* Extension+Date.swift in Sources */,
 				EA5DE4742985509000790799 /* Ubunut.swift in Sources */,
 				EA5DE4582983D36400790799 /* Task_ManagementApp.swift in Sources */,
 			);
@@ -329,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Task Management/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Task-Management-Info.plist";
@@ -359,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Task Management/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Task-Management-Info.plist";

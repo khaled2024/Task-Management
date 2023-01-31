@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @State private var currentDay: Date = .init()
-    @State private var tasks: [Task] = sampleTask
+    @ObservedObject var homeVM: HomeViewModel = HomeViewModel()
     @State private var addNewTask:Bool = false
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -21,7 +21,7 @@ struct Home: View {
         }
         .fullScreenCover(isPresented: $addNewTask) {
             AddTaskView { task in
-                tasks.append(task)
+                homeVM.tasks.append(task)
             }
         }
     }
@@ -90,6 +90,13 @@ struct Home: View {
                     Text(weekDay.date.toString(format: "dd"))
                         .ubuntu(17,status ? .medium : .regular)
                 }
+                .padding([.vertical,.horizontal],5)
+                .background(
+                    status ? RoundedRectangle(cornerRadius: 8)
+                        .fill(.black.opacity(0.1))
+                    : RoundedRectangle(cornerRadius: 8)
+                        .fill(.clear)
+                )
                 .foregroundColor(status ? Color.blue : .gray)
                 .hAlign(.center)
                 .contentShape(Rectangle())
@@ -130,7 +137,7 @@ struct Home: View {
             
             // filtering tasks...
             let calender = Calendar.current
-            let filterTasks = tasks.filter {
+            let filterTasks = homeVM.tasks.filter {
                 if let hour = calender.dateComponents([.hour], from: date).hour, let taskHour = calender.dateComponents([.hour], from: $0.dateAdded).hour,hour == taskHour && calender.isDate($0.dateAdded, inSameDayAs: currentDay){
                     return true
                 }
@@ -185,55 +192,6 @@ struct Home_Previews: PreviewProvider {
         ContentView()
     }
 }
-//MARK: - Alignment extentions
-extension View{
-    func hAlign(_ alignment: Alignment)-> some View{
-        self.frame(maxWidth: .infinity,alignment: alignment)
-    }
-    func vAlign(_ alignment: Alignment)-> some View{
-        self.frame(maxHeight: .infinity,alignment: alignment)
-    }
-}
-//MARK: - Date String Ex :-
-extension Date{
-    func toString(format: String)-> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-}
-//MARK: - Calender Ex :-
-extension Calendar{
-    /// return 24 hours in a day...
-    var hours: [Date]{
-        let startOfDay = self.startOfDay(for: Date())
-        var hours: [Date] = []
-        for index in 0..<24{
-            if let date = self.date(byAdding: .hour,value: index, to: startOfDay){
-                hours.append(date)
-            }
-        }
-        return hours
-    }
-    /// return current week in Array format
-    var currentWeek: [WeekDay]{
-        guard let firstWeekDay = self.dateInterval(of: .weekOfMonth, for: Date())?.start else{return []}
-        var week: [WeekDay] = []
-        for index in 0..<7{
-            if let day = self.date(byAdding: .day,value: index, to: firstWeekDay){
-                let weekDaySymbol: String = day.toString(format: "EEEE")
-                let isToday = self.isDateInToday(day)
-                week.append(.init(string: weekDaySymbol, date: day,isToday: isToday))
-            }
-        }
-        return week
-    }
-    // used to stored data of each week day...
-    struct WeekDay: Identifiable{
-        var id: UUID = .init()
-        var string: String
-        var date: Date
-        var isToday: Bool = false
-    }
-}
+
+
 
