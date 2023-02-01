@@ -57,22 +57,26 @@ struct Home: View {
                 
             }
             /// Today date in string...
-            Text(Date().toString(format: "MMM YYYY"))
+            Text(Date().toString(format: "dd MMM YYYY"))
                 .ubuntu(16, .medium)
                 .hAlign(.leading)
                 .padding(.top, 15)
             /// current week row...
-            WeekRow()
+            ScrollView(.horizontal, showsIndicators: false) {
+                WeekRow()
+                .padding(.horizontal)
+            }
+            .frame(maxWidth: .infinity)
         }
         .padding(15)
         /// this background to make sure that the timeline date didnt shown in top of the headerview
         .background(
             VStack(spacing: 0, content: {
-                Color.white
+                Color("HeaderColor")
                 // Gradient...
                 Rectangle()
                     .fill(
-                        .linearGradient(colors: [.white,.clear], startPoint: .top, endPoint: .bottom))
+                        .linearGradient(colors: [Color("HeaderColor"),.clear], startPoint: .top, endPoint: .bottom))
                     .frame(height: 20)
             })
             .ignoresSafeArea()
@@ -81,23 +85,26 @@ struct Home: View {
     // Week row
     @ViewBuilder
     func WeekRow()-> some View{
-        HStack(spacing: 0) {
+        HStack(spacing: 8) {
             ForEach(Calendar.current.currentWeek) { weekDay in
                 let status = Calendar.current.isDate(weekDay.date, inSameDayAs: currentDay)
+//                let lastTaskAdded = homeVM.tasks.last?.dateAdded ?? Date()
+//                let lastTaskStatus = Calendar.current.isDate(lastTaskAdded, inSameDayAs: currentDay)
+                
                 VStack(spacing: 6){
                     Text(weekDay.string.prefix(3))
-                        .ubuntu(13, .medium)
-                    Text(weekDay.date.toString(format: "dd"))
-                        .ubuntu(17,status ? .medium : .regular)
+                        .ubuntu(15, .medium)
+                    Text(weekDay.date.toString(format: "dd/MM"))
+                        .ubuntu(12,status ? .medium : .regular)
                 }
                 .padding([.vertical,.horizontal],5)
                 .background(
                     status ? RoundedRectangle(cornerRadius: 8)
-                        .fill(.black.opacity(0.1))
+                        .fill(Color("RoundedColor"))
                     : RoundedRectangle(cornerRadius: 8)
                         .fill(.clear)
                 )
-                .foregroundColor(status ? Color.blue : .gray)
+                .foregroundColor(status ? Color.blue : Color("ForgroundColor"))
                 .hAlign(.center)
                 .contentShape(Rectangle())
                 .onTapGesture {
@@ -145,7 +152,7 @@ struct Home: View {
             }
             if filterTasks.isEmpty{
                 Rectangle()
-                    .stroke(.gray.opacity(0.5),style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
+                    .stroke(Color("StrokColor"),style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
                     .frame(height: 0.5)
                     .offset(y: 10)
             }else{

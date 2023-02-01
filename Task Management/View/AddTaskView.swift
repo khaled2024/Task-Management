@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-
 struct AddTaskView: View {
     /// call back...
     var onAdd: (Task)->()
     @Environment(\.dismiss) private var dismiss
+    /// proparties...
     @State private var taskName: String = ""
     @State private var taskDescription: String = ""
     @State private var taskDate: Date = .init()
     @State private var taskCategory: Category = .modifiers
-    
     @State private var animateColor: Color = Category.general.color
     @State private var animate: Bool = false
     var body: some View {
@@ -107,15 +106,15 @@ struct AddTaskView: View {
                 .ignoresSafeArea()
             }
             VStack(alignment: .leading,spacing: 10) {
-                TitleView("DESCRIPTION",.gray)
+                TitleView("DESCRIPTION",Color("ForgroundColor"))
                 TextField("About Your Task", text: $taskDescription)
                     .ubuntu(16, .regular)
                     .padding(.top,2)
                 Rectangle()
-                    .fill(.black.opacity(0.2))
+                    .fill(Color("StrokColor"))
                     .frame(height: 1)
                 
-                TitleView("CATEGORY",.gray)
+                TitleView("CATEGORY",Color("ForgroundColor"))
                     .padding(.top, 15)
                 
                 LazyVGrid(columns: Array(repeating: .init(.flexible(),spacing: 20), count: 3), spacing: 15) {

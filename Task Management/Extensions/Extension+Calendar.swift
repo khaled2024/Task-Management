@@ -24,7 +24,7 @@ extension Calendar{
     var currentWeek: [WeekDay]{
         guard let firstWeekDay = self.dateInterval(of: .weekOfMonth, for: Date())?.start else{return []}
         var week: [WeekDay] = []
-        for index in 0..<7{
+        for index in 0..<30{
             if let day = self.date(byAdding: .day,value: index, to: firstWeekDay){
                 let weekDaySymbol: String = day.toString(format: "EEEE")
                 let isToday = self.isDateInToday(day)
